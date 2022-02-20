@@ -257,7 +257,7 @@ function drawChart() {
 					if(i != rows[row] - 1)
 						drawStand(Math.max(r - step * 0.5, r - 35 * customScale), t - angle_step / 2, stands[row][i*2+1]);
 				}
-				if(showNumbers && chairs[row][i].enabled && chairs[row][i].label === false && chairs[row][i].shape !== "snare") {
+				if(showNumbers && chairs[row][i].enabled && chairs[row][i].label === false && chairs[row][i].shape !== ("snare"||"bass_drum"||"timp")) {
 					n++;
 				        totalChairs ++;
 				}
