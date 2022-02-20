@@ -20,6 +20,7 @@ var rows;
 var podium;
 var stands;
 var chairs;
+var chairTypes = ['sqr','cello','circ'];
 var labels;
 var customRowFontSizes;
 var standCoordinates;
@@ -257,7 +258,7 @@ function drawChart() {
 					if(i != rows[row] - 1)
 						drawStand(Math.max(r - step * 0.5, r - 35 * customScale), t - angle_step / 2, stands[row][i*2+1]);
 				}
-				if(showNumbers && chairs[row][i].enabled && chairs[row][i].label === false && chairs[row][i].shape !== ("snare"||"bass_drum"||"timp")) {
+				if(showNumbers && chairs[row][i].enabled && chairs[row][i].label === false && chairTypes.includes(chairs[row][i].shape)) {
 					n++;
 				        totalChairs ++;
 				}
@@ -304,7 +305,7 @@ function drawChart() {
 						drawStandXY(x + x_step * 0.5, Math.min(y + step * 0.5, y + 35 * customScale), stands[row][i*2+1]);
 					}
 				}
-				if(showNumbers && chairs[row][i].enabled && chairs[row][i].label === false && chairs[row][i].shape !== ("snare"||"bass_drum"||"timp")) {
+				if(showNumbers && chairs[row][i].enabled && chairs[row][i].label === false && chairTypes.includes(chairs[row][i].shape)) {
 					n++;
 					totalChairs++;
 				}
