@@ -20,7 +20,7 @@ var rows;
 var podium;
 var stands;
 var chairs;
-var chairTypes = ['sqr','cello','circ'];
+var chairTypes = ['sqr','cello'];
 var labels;
 var customRowFontSizes;
 var standCoordinates;
@@ -178,6 +178,7 @@ function drawChart() {
 	var letterRows = $('#chkletters').attr('checked') != null;
 	var totalChairs = 0;
 	var totalStands = 0;
+	var totalStools = 0;
 	if(showNumbers) {
 		var n = 1;
 	} else {
@@ -262,6 +263,10 @@ function drawChart() {
 					n++;
 				        totalChairs ++;
 				}
+				if(showNumbers && chairs[row][i].enabled && chairs[row][i].label === false && chairs[row][i].shape === 'circ') {
+					n++
+					totalStools ++;
+				}
 			}
 			
 			if (showStands) {
@@ -308,6 +313,10 @@ function drawChart() {
 				if(showNumbers && chairs[row][i].enabled && chairs[row][i].label === false && chairTypes.includes(chairs[row][i].shape)) {
 					n++;
 					totalChairs++;
+				}
+				if(showNumbers && chairs[row][i].enabled && chairs[row][i].label === false && chairs[row][i].shape === 'circ') {
+					n++
+					totalStools ++;
 				}
 			}
 			if (showStands) {
@@ -367,6 +376,24 @@ function drawChart() {
 			text: totalChairs,
 			font: 'normal 11pt Verdana, sans-serif'
 		});
+		
+		if (totalStools !== 0) {
+			$('canvas').drawText({
+				fillStyle: '#000',
+				strokeStyle: '#fff',
+				x: 960, y: 40,
+				text: 'total stools =',
+				font: 'normal 11pt Verdana, sans-serif'
+			});
+		
+			$('canvas').drawText({
+				fillStyle: '#000',
+				strokeStyle: '#fff',
+				x: 1025, y: 40,
+				text: totalStools,
+				font: 'normal 11pt Verdana, sans-serif'
+			});
+		}
 	}
 	
 	if (showPodium) {
