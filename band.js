@@ -38,12 +38,12 @@ $(document).ready(function() {
 	});
 	
 	$('#canvas').attr({
-  		'width': $('#canvas').attr(width) * canvasScale,
-  		'height': $('#canvas').attr(height) * canvasScale
+  		'width': $('#canvas').attr('width') * canvasScale,
+  		'height': $('#canvas').attr('height') * canvasScale
 	});
 	$('#guide_canvas').attr({
-  		'width': $('#canvas').attr(width) * canvasScale,
-  		'height': $('#canvas').attr(height) * canvasScale
+  		'width': $('#canvas').attr('width') * canvasScale,
+  		'height': $('#canvas').attr('height') * canvasScale
 	});
 
 
