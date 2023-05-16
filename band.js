@@ -424,7 +424,7 @@ function drawPodium() {
 		$('canvas').drawRect({
 			fillStyle: '#fff',
 			strokeStyle: '#000',
-			strokeWidth: 4,
+			strokeWidth: 4 *canvasScale,
 			x: 525*canvasScale, y: 470*canvasScale,
 			width: 48 * seatScale,
 			height: 48 * seatScale,
@@ -434,8 +434,8 @@ function drawPodium() {
 		$('canvas').drawRect({
 			fillStyle: '#fff',
 			strokeStyle: '#CCC',
-			strokeWidth: 4,
-			x: 525, y: 470,
+			strokeWidth: 4*canvasScale,
+			x: 525*canvasScale, y: 470*canvasScale,
 			width: 48 * seatScale,
 			height: 48 * seatScale,
 			cornerRadius: 10 * seatScale
@@ -474,7 +474,7 @@ function drawChairXY(x, y, t, n, a, chair) {
 			$('canvas').drawText({
 				fillStyle: '#000',
 				strokeStyle: '#fff',
-				strokeWidth: 5,
+				strokeWidth: 5*canvasScale,
 				x: x, y: y,
 				text: chair.label === false ? a + n : chair.label,
 				font: 'normal ' + fontSize + 'pt Verdana, sans-serif'
@@ -484,20 +484,20 @@ function drawChairXY(x, y, t, n, a, chair) {
 				radius: 20 * seatScale,
 				fillStyle: '#000',
 				strokeStyle: '#000',
-				strokeWidth: 5,
+				strokeWidth: 5*canvasScale,
 				x: x, y: y
 			});
 			$('canvas').drawArc({
 				radius: 20 * seatScale - 3,
 				fillStyle: '#fff',
 				strokeStyle: '#fff',
-				strokeWidth: 5,
+				strokeWidth: 5*canvasScale,
 				x: x, y: y
 			});
 			$('canvas').drawText({
 				fillStyle: '#000',
 				strokeStyle: '#fff',
-				strokeWidth: 5,
+				strokeWidth: 5*canvasScale,
 				x: x, y: y,
 				text: chair.label === false ? a + n : chair.label,
 				font: 'normal ' + fontSize + 'pt Verdana, sans-serif'
@@ -514,13 +514,13 @@ function drawChairXY(x, y, t, n, a, chair) {
 				fillStyle: '#fff',
 				strokeStyle: '#fff',
 				x: x, y: y,
-				width: 46 * seatScale - 12, height: 46 * seatScale - 12,
+				width: 46 * seatScale - (12*canvasScale), height: 46 * seatScale - (12*canvasScale),
 				angle: -1 * t
 			});
 			$('canvas').drawText({
 				fillStyle: '#000',
 				strokeStyle: '#fff',
-				strokeWidth: 5,
+				strokeWidth: 5*canvasScale,
 				x: x, y: y,
 				text: chair.label === false ? a + n : chair.label,
 				font: 'normal ' + fontSize + 'pt Verdana, sans-serif'
