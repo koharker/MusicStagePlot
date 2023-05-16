@@ -32,7 +32,7 @@ $(document).ready(function() {
 	setLetterCheckbox();
 	$.jCanvas({
 		strokeStyle: '#000',
-		strokeWidth: 2,
+		strokeWidth: 2 ,
 		x: centerX, y: centerY,
 		inDegrees: false
 	});
@@ -188,7 +188,7 @@ function drawChart() {
 	readInputs();
 	updateChairLabels();
 	seatScale = Math.min(1, 7 / rows.length) * customScale;
-	var step = 300 / (rows.length - 1)
+	var step = 300 / (rows.length - 1) * canvasScale
 	var row_length = 0;
 	for(var row in rows) {
 		if(restartNumbering) {
@@ -199,9 +199,9 @@ function drawChart() {
 		}
 		if(letterRows)
 			a = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.charAt(row);
-		var r = 350;
+		var r = 350 * canvasScale;
 		if(rows.length > 1)
-			r = 185 + step * row;
+			r = (185 * canvasScale) + step * row;
 			console.log(r + "is r");
 		if(row < rows.length - straightRows) {
 			//Angled arc mode
@@ -210,7 +210,7 @@ function drawChart() {
 			var arc_length = Math.PI/2 + Math.acos(((row))/r) - .3 - (1 - r / (550 + 90 * row));
 			*/
 			$('canvas').drawArc({ radius: r });
-			var arc_length = Math.PI - .3 - (1 - r / 550)
+			var arc_length = Math.PI - .3 - (1 - r / (550 *customScale))
 			var angle_step = arc_length / (rows[row] - 1)
 			var vcStep = angle_step * 1.5
 			for(var i = 0; i < rows[row]; i++) {
@@ -332,9 +332,9 @@ function drawChart() {
 		$('canvas').drawText({
 			fillStyle: '#000',
 			strokeStyle: '#fff',
-			x: 66, y: 8,
+			x: 66 * canvasScale, y: 8 * canvasScale,
 			text: ' = music stand',
-			font: 'normal 11pt Verdana, sans-serif'
+			font: `normal ${11*canvasScale}pt Verdana, sans-serif`
 		});
 		$('canvas').drawLine({ x1: 2, y1: 2, x2: 12, y2: 12 });
 		$('canvas').drawLine({ x1: 2, y1: 12, x2: 12, y2: 2 });
