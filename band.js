@@ -336,23 +336,23 @@ function drawChart() {
 			text: ' = music stand',
 			font: `normal ${11*canvasScale}pt Verdana, sans-serif`
 		});
-		$('canvas').drawLine({ x1: 2, y1: 2, x2: 12, y2: 12 });
-		$('canvas').drawLine({ x1: 2, y1: 12, x2: 12, y2: 2 });
+		$('canvas').drawLine({ x1: 2*canvasScale, y1: 2*canvasScale, x2: 12*canvasScale, y2: 12*canvasScale });
+		$('canvas').drawLine({ x1: 2*canvasScale, y1: 12*canvasScale, x2: 12*canvasScale, y2: 2*canvasScale });
 		
 		$('canvas').drawText({
 			fillStyle: '#000',
 			strokeStyle: '#fff',
-			x: 960, y: 24,
+			x: 960 * canvasScale, y: 24 * canvasScale,
 			text: 'total stands =',
-			font: 'normal 11pt Verdana, sans-serif'
+			font: `normal ${11*canvasScale}pt Verdana, sans-serif`
 		});
 		
 		$('canvas').drawText({
 			fillStyle: '#000',
 			strokeStyle: '#fff',
-			x: 1025, y: 24,
+			x: 1025 * canvasScale, y: 24 * canvasScale,
 			text: totalStands,
-			font: 'normal 11pt Verdana, sans-serif'
+			font: `normal ${11*canvasScale}pt Verdana, sans-serif`
 		});
 	}
 	
@@ -362,9 +362,9 @@ function drawChart() {
 		$('canvas').drawText({
 			fillStyle: '#000',
 			strokeStyle: '#fff',
-			x: 960, y: 8,
+			x: 960*canvasScale, y: 8*canvasScale,
 			text: 'total chairs =',
-			font: 'normal 11pt Verdana, sans-serif'
+			font: `normal ${11*canvasScale}pt Verdana, sans-serif`
 		});
 		/*for(var rown in rows) {
 			var totalChairs =	
@@ -372,26 +372,26 @@ function drawChart() {
 		$('canvas').drawText({
 			fillStyle: '#000',
 			strokeStyle: '#fff',
-			x: 1025, y: 8,
+			x: 1025*canvasScale, y: 8*canvasScale,
 			text: totalChairs,
-			font: 'normal 11pt Verdana, sans-serif'
+			font: `normal ${11*canvasScale}pt Verdana, sans-serif`
 		});
 		
 		if (totalStools !== 0) {
 			$('canvas').drawText({
 				fillStyle: '#000',
 				strokeStyle: '#fff',
-				x: 960, y: 40,
+				x: 960*canvasScale, y: 40*canvasScale,
 				text: 'total stools =',
-				font: 'normal 11pt Verdana, sans-serif'
+				font: `normal ${11*canvasScale}pt Verdana, sans-serif`
 			});
 		
 			$('canvas').drawText({
 				fillStyle: '#000',
 				strokeStyle: '#fff',
-				x: 1025, y: 40,
+				x: 1025*canvasScale, y: 40*canvasScale,
 				text: totalStools,
-				font: 'normal 11pt Verdana, sans-serif'
+				font: `normal ${11*canvasScale}pt Verdana, sans-serif`
 			});
 		}
 	}
@@ -399,7 +399,7 @@ function drawChart() {
 	if (showPodium) {
 		drawPodium();
 		if (showStands) {
-			drawStandXY(525, (450 - 25 * customScale), podium);
+			drawStandXY(525*canvasScale, ((450*canvasScale) - 25 * customScale), podium);
 		}
 	}
 
@@ -743,23 +743,23 @@ function drawStandXY(x, y, stand) {
 		fillStyle: '#999',
 		strokeStyle: '#999',
 		x: x, y: y,
-		width: 7, height: 7
+		width: 7*canvasScale, height: 7*canvasScale
 	});
 	$('#guide_canvas').drawRect({
 		fillStyle: '#fff',
 		strokeStyle: '#fff',
 		x: x, y: y,
-		width: 6, height: 6
+		width: 6*canvasScale, height: 6*canvasScale
 	});
 	if(stand.enabled) {
 		$('canvas').each(function() {
 			$(this).drawLine({
-				x1: x-5, y1: y-5,
-				x2: x+5, y2: y+5
+				x1: x-(5*canvasScale), y1: y-(5*canvasScale),
+				x2: x+(5*canvasScale), y2: y+(5*canvasScale)
 			});
 			$(this).drawLine({
-				x1: x-5, y1: y+5,
-				x2: x+5, y2: y-5
+				x1: x-(5*canvasScale), y1: y+(5*canvasScale),
+				x2: x+(5*canvasScale), y2: y-(5*canvasScale)
 			});
 		});
 	}
