@@ -1,4 +1,4 @@
-var canvasScale = 1;
+var canvasScale = 2;
 var spectrumInitialized = false;
 var editingColor = false;
 var defaultPalette;
@@ -8,10 +8,10 @@ var podium = {};
 var band;
 var jsonVersion = 6;
 
-var centerX = 525;
-var centerY = 550;
-var seatScale = 1;
-var customScale = 1;
+var centerX = 525*canvasScale
+var centerY = 550*canvasScale
+var seatScale = 1*canvasScale
+var customScale = 1*canvasScale
 var maxRows = 6;
 var generateCode = false;
 var showStands;
@@ -926,7 +926,7 @@ function reset() {
 	rows = [];
 	labels = [];
 	customRowFontSizes = [];
-	customScale = 1;
+	customScale = 1 * canvasScale;
 	straightRows = 0;
 	$('#scale').html('100');
 	$('#straight').html('0');
