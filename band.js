@@ -32,10 +32,21 @@ $(document).ready(function() {
 	setLetterCheckbox();
 	$.jCanvas({
 		strokeStyle: '#000',
-		strokeWidth: 2 ,
+		strokeWidth: 2 * canvasScale ,
 		x: centerX, y: centerY,
 		inDegrees: false
 	});
+	
+	$('#canvas').css({
+  		'width': $('#canvas').width() * canvasScale,
+  		'height': $('#canvas').width() * canvasScale
+	});
+	$('#guide_canvas').css({
+  		'width': $('#canvas').width() * canvasScale,
+  		'height': $('#canvas').width() * canvasScale
+	});
+
+
 	$('input').change(drawChart);
 	$('#code').unbind('change');
 //	$('input').keyup(drawChart);
@@ -414,10 +425,10 @@ function drawPodium() {
 			fillStyle: '#fff',
 			strokeStyle: '#000',
 			strokeWidth: 4,
-			x: 525, y: 470,
+			x: 525*canvasScale, y: 470*canvasScale,
 			width: 48 * seatScale,
 			height: 48 * seatScale,
-			cornerRadius: 10
+			cornerRadius: 10*seatScale
 		});
 	} else {
 		$('canvas').drawRect({
@@ -427,7 +438,7 @@ function drawPodium() {
 			x: 525, y: 470,
 			width: 48 * seatScale,
 			height: 48 * seatScale,
-			cornerRadius: 10
+			cornerRadius: 10 * seatScale
 		});
 	}
 }
