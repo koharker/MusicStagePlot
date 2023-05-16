@@ -42,8 +42,8 @@ $(document).ready(function() {
   		'height': $('#canvas').attr('height') * canvasScale
 	});
 	$('#guide_canvas').attr({
-  		'width': $('#canvas').attr('width') * canvasScale,
-  		'height': $('#canvas').attr('height') * canvasScale
+  		'width': $('#guide_canvas').attr('width') * canvasScale,
+  		'height': $('#guide_canvas').attr('height') * canvasScale
 	});
 
 
