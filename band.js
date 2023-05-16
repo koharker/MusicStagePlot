@@ -37,13 +37,13 @@ $(document).ready(function() {
 		inDegrees: false
 	});
 	
-	$('#canvas').css({
-  		'width': $('#canvas').width() * canvasScale,
-  		'height': $('#canvas').width() * canvasScale
+	$('#canvas').attr({
+  		'width': $('#canvas').attr(width) * canvasScale,
+  		'height': $('#canvas').attr(height) * canvasScale
 	});
-	$('#guide_canvas').css({
-  		'width': $('#canvas').width() * canvasScale,
-  		'height': $('#canvas').width() * canvasScale
+	$('#guide_canvas').attr({
+  		'width': $('#canvas').attr(width) * canvasScale,
+  		'height': $('#canvas').attr(height) * canvasScale
 	});
 
 
