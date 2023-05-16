@@ -767,7 +767,7 @@ function drawStandXY(x, y, stand) {
 
 function clickChart(e) {
 	var canvas = $('#guide_canvas');
-	var scale = 1050 / canvas.width();
+	var scale = 1050 * canvasScale / canvas.width();
 	var x = (e.pageX - canvas.offset().left) * scale;
 	var y = (e.pageY - canvas.offset().top) * scale;
 	for(var row in rows) {
@@ -796,7 +796,7 @@ function clickChart(e) {
 // Add double click
 function dblClickChart(e) {
 	var canvas = $('#guide_canvas');
-	var scale = 1050 / canvas.width();
+	var scale = 1050 * canvasScale / canvas.width();
 	var x = (e.pageX - canvas.offset().left) * scale;
 	var y = (e.pageY - canvas.offset().top) * scale;
 	for(var row in rows) {
