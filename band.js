@@ -480,6 +480,31 @@ function drawChairXY(x, y, t, n, a, chair) {
 				font: 'normal ' + fontSize + 'pt Verdana, sans-serif'
 			});
 		} else if(chair.shape === "circ"){
+			
+			var canvas = $('canvas');
+			canvas.drawArc({
+			    radius: [20 * seatScale, 20 * seatScale - (3*canvasScale)],
+			    fillStyle: ['#000', '#fff'],
+			    strokeStyle: ['#000', '#fff'],
+			    strokeWidth: 5 * canvasScale,
+			    x: x,
+			    y: y
+			});
+			canvas.drawText({
+			    fillStyle: '#000',
+			    strokeStyle: '#fff',
+			    strokeWidth: 5 * canvasScale,
+			    x: x,
+			    y: y,
+			    text: chair.label === false ? a + n : chair.label,
+			    font: 'normal ' + fontSize + 'pt Verdana, sans-serif'
+			});
+
+
+			
+			
+			
+			/*
 			$('canvas').drawArc({
 				radius: 20 * seatScale,
 				fillStyle: '#000',
@@ -502,6 +527,7 @@ function drawChairXY(x, y, t, n, a, chair) {
 				text: chair.label === false ? a + n : chair.label,
 				font: 'normal ' + fontSize + 'pt Verdana, sans-serif'
 			});
+			*/
 		} else if(chair.shape === "cello") {
 			$('canvas').drawRect({
 				fillStyle: '#000',
