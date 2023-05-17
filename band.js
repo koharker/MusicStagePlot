@@ -234,7 +234,7 @@ function drawChart() {
 			var arc_length = Math.PI/2 + Math.acos(((row))/r) - .3 - (1 - r / (550 + 90 * row));
 			*/
 			$('canvas').drawArc({ radius: r });
-			var arc_length = Math.PI - .3 - (1 - r / (550 *customScale))
+			var arc_length = Math.PI - .3 - (1 - r / (550 *canvasScale))
 			var angle_step = arc_length / (rows[row] - 1)
 			var vcStep = angle_step * 1.5
 			for(var i = 0; i < rows[row]; i++) {
