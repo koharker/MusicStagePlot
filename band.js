@@ -31,6 +31,7 @@ var vcLoc = [];
 $(document).ready(function() {
 	setLetterCheckbox();
 	//for jCanvas 21.0.1
+	/*
 	$.jCanvas.defaults({
   		strokeStyle: '#000',
   		strokeWidth: 2 * canvasScale,
@@ -38,7 +39,8 @@ $(document).ready(function() {
 		y: centerY,
 		inDegrees: false
 	});
-	/*
+	*/
+	
 	//for jCanvas5.1
 	$.jCanvas({
 		strokeStyle: '#000',
@@ -46,7 +48,7 @@ $(document).ready(function() {
 		x: centerX, y: centerY,
 		inDegrees: false
 	});
-	*/
+	
 	
 	$('#canvas').attr({
   		'width': $('#canvas').attr('width') * canvasScale,
@@ -491,7 +493,7 @@ function drawChairXY(x, y, t, n, a, chair) {
 				font: 'normal ' + fontSize + 'pt Verdana, sans-serif'
 			});
 		} else if(chair.shape === "circ"){
-			
+			/*
 			var canvas = $('canvas');
 			canvas.drawArc({
 				groups: ['outer', 'inner'],
@@ -513,10 +515,10 @@ function drawChairXY(x, y, t, n, a, chair) {
 			});
 
 
+			*/
 			
 			
 			
-			/*
 			$('canvas').drawArc({
 				radius: 20 * seatScale,
 				fillStyle: '#000',
@@ -539,7 +541,7 @@ function drawChairXY(x, y, t, n, a, chair) {
 				text: chair.label === false ? a + n : chair.label,
 				font: 'normal ' + fontSize + 'pt Verdana, sans-serif'
 			});
-			*/
+			
 		} else if(chair.shape === "cello") {
 			$('canvas').drawRect({
 				fillStyle: '#000',
