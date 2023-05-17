@@ -30,12 +30,23 @@ var vcLoc = [];
 
 $(document).ready(function() {
 	setLetterCheckbox();
+	//for jCanvas 21.0.1
+	$.jCanvas.defaults({
+  		strokeStyle: '#000',
+  		strokeWidth: 2 * canvasScale,
+  		x: centerX,
+		y: centerY,
+		inDegrees: false
+	});
+	/*
+	//for jCanvas5.1
 	$.jCanvas({
 		strokeStyle: '#000',
 		strokeWidth: 2 * canvasScale ,
 		x: centerX, y: centerY,
 		inDegrees: false
 	});
+	*/
 	
 	$('#canvas').attr({
   		'width': $('#canvas').attr('width') * canvasScale,
