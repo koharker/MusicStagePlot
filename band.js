@@ -483,12 +483,13 @@ function drawChairXY(x, y, t, n, a, chair) {
 			
 			var canvas = $('canvas');
 			canvas.drawArc({
-			    radius: [20 * seatScale, 20 * seatScale - (3*canvasScale)],
-			    fillStyle: ['#000', '#fff'],
-			    strokeStyle: ['#000', '#fff'],
-			    strokeWidth: 5 * canvasScale,
-			    x: x,
-			    y: y
+				groups: ['outer', 'inner'],
+				radius: [20 * seatScale, 20 * seatScale - (3*canvasScale)],
+				fillStyle: ['#000', '#fff'],
+				strokeStyle: ['#000', '#fff'],
+				strokeWidth: [5 * canvasScale, 5 * canvasScale],
+				x: x,
+				y: y
 			});
 			canvas.drawText({
 			    fillStyle: '#000',
